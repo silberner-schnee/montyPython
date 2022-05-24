@@ -1,0 +1,42 @@
+highlighted_poems = "Afterimages:Audre Lorde:1997,  The Shadow:William Carlos Williams:1915, Ecstasy:Gabriela Mistral:1925,   Georgia Dusk:Jean Toomer:1923,   Parting Before Daybreak:An Qi:2014, The Untold Want:Walt Whitman:1871, Mr. Grumpledump's Song:Shel Silverstein:2004, Angel Sound Mexico City:Carmen Boullosa:2013, In Love:Kamala Suraiyya:1965, Dream Variations:Langston Hughes:1994, Dreamwood:Adrienne Rich:1987"
+
+#print(highlighted_poems)
+#split poem from comma into list
+highlighted_poems_list = highlighted_poems.split(',')
+#display changes
+#print(highlighted_poems_list)
+
+#create new list and remove spaces in highlighted_poems_list
+highlighted_poems_stripped = []
+
+for item in highlighted_poems_list:
+  highlighted_poems_stripped.append(item.strip())
+
+#show changes
+#print(highlighted_poems_stripped)
+
+#make list of lists
+highlighted_poems_details = []
+
+#iterate through highlighted_poems_stripped and split each string at ':'
+#append new list to highlighted_poems_details
+
+for item in highlighted_poems_stripped:
+  highlighted_poems_details.append(item.split(':'))
+
+#show result
+#print(highlighted_poems_details)
+
+#make 3 empty lists, separate titles, poets, publication dates into individual lists
+titles = []
+poets = []
+dates = []
+
+#iterate through highlighted_poems_details, append appropriate elements into lists 
+for item in highlighted_poems_details:
+  titles.append(item[0])
+  poets.append(item[1])
+  dates.append(item[2])
+
+for i in range(0,len(highlighted_poems_details)):
+  print('The poem {} was published by {} in {}.'.format(titles[i], poets[i], dates[i]))
